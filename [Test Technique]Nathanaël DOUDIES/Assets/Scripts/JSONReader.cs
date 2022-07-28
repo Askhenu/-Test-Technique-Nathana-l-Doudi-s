@@ -7,7 +7,7 @@ public class JSONReader : MonoBehaviour
 
     [System.Serializable]
     public class DataSet
-    {
+    {        
         public int id;
         public string title;
         public string content;
@@ -21,6 +21,6 @@ public class JSONReader : MonoBehaviour
 
     public DataList Process(TextAsset dataSet)
     {
-        return JsonUtility.FromJson<DataList>(dataSet.text);
+        return JsonUtility.FromJson<DataList>("{\"dataSets\":" + dataSet.text + "}");
     }
 }
